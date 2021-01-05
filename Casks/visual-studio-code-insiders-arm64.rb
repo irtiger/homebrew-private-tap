@@ -1,6 +1,6 @@
 cask "visual-studio-code-insiders-arm64" do
-  version "1.53.0-insider,98106c48a07d4d07f0f71b4db9b3ff156f223339"
-  sha256 "b540be24d29883c0d8152f2893a694aba5eb065d0cb3abcd67c852040943bd77"
+  version "1.53.0-insider,a48ef56fbf7767f55a193d7d5687addd1fc9239c"
+  sha256 "933fac74a20f854ba9d261e1a67fb13da6f6f9137ad9f953780b15fbbc4b9e70"
 
   url "https://az764295.vo.msecnd.net/insider/#{version.after_comma}/VSCode-darwin-arm64.zip",
       verified: "az764295.vo.msecnd.net/insider/"
