@@ -1,10 +1,18 @@
-cask "visual-studio-code-insiders-arm64" do
-  version "1.53.0-insider,a48ef56fbf7767f55a193d7d5687addd1fc9239c"
-  sha256 "933fac74a20f854ba9d261e1a67fb13da6f6f9137ad9f953780b15fbbc4b9e70"
+cask "visual-studio-code-insiders" do
+  version "1.53.0-insider,ed6c343edb720d91ee0859e566c84b5687f5a9d5"
 
-  url "https://az764295.vo.msecnd.net/insider/#{version.after_comma}/VSCode-darwin-arm64.zip",
-      verified: "az764295.vo.msecnd.net/insider/"
-  appcast "https://vscode-update.azurewebsites.net/api/update/darwin-arm64/insider/VERSION"
+  if Hardware::CPU.intel?
+    sha256 "1f8720d71d70fd1452c156c0e8e33fc0c35623ffdafb4466f8e5389449d935ce"
+    url "https://az764295.vo.msecnd.net/insider/#{version.after_comma}/VSCode-darwin.zip",
+        verified: "az764295.vo.msecnd.net/insider/"
+    appcast "https://vscode-update.azurewebsites.net/api/update/darwin/insider/VERSION"
+  else
+    sha256 "87bb308a4e80ce04ca316f8c1158356df8d364a5f66241fecf2f627d5094389b"
+    url "https://az764295.vo.msecnd.net/insider/#{version.after_comma}/VSCode-darwin-arm64.zip",
+        verified: "az764295.vo.msecnd.net/insider/"
+    appcast "https://vscode-update.azurewebsites.net/api/update/darwin-arm64/insider/VERSION"
+  end
+
   name "Microsoft Visual Studio Code - Insiders"
   name "VS Code - Insiders"
   desc "Open-source code editor"
